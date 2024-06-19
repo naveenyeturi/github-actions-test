@@ -13,6 +13,6 @@ jobs:
       - name: Check for specific text in file
         run: |
           if ! grep -q "version=2024" test.txt; then
-            echo "The required text was not found in example.txt"
+            echo "Not supported version"
             exit 1
           fi
