@@ -3,7 +3,7 @@ name: Check test file for version
 on:
   pull_request:
     branches:
-      - main
+      - master
 jobs:
   check-text:
     runs-on: ubuntu-latest
