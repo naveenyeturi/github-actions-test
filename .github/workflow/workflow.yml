@@ -1,1 +1,18 @@
 
+name: Check test file for version
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  check-text:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Check for specific text in file
+        run: |
+          if ! grep -q "version=2024" test.txt; then
+            echo "The required text was not found in example.txt"
+            exit 1
+          fi
